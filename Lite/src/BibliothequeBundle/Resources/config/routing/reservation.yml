@@ -1,0 +1,19 @@
+reservation_index:
+    path:     /
+    defaults: { _controller: "BibliothequeBundle:Reservation:index" }
+
+reservation_show:
+    path:     /{id}/show
+    defaults: { _controller: "BibliothequeBundle:Reservation:show" }
+
+reservation_new:
+    path:     /new/{id}
+    defaults: { _controller: "BibliothequeBundle:Reservation:new" }
+
+reservation_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BibliothequeBundle:Reservation:edit" }
+
+reservation_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BibliothequeBundle:Reservation:delete" }

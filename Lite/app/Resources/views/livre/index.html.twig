@@ -1,0 +1,86 @@
+
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <!-- /.card -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Livre list</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nom</th>
+                                <th>Resume</th>
+                                <th>Photo</th>
+                                <th>Auteur</th>
+                                <th>Nbdepages</th>
+                                <th>Editur</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for livre in livres %}
+                                <tr>
+                                    <td>{{ livre.id }}</td>
+                                    <td>{{ livre.nom }}</td>
+                                    <td>{{ livre.resume }}</td>
+                                    <td class="patient-img sorting_1" style=" width: 40px; height: 40px">
+                                        <img src="{{ asset('/uploads/images/livres/') }}{{ livre.photo }}"  style=" width: 80px; height: 80px" alt="">
+                                    </td>
+                                    <td>{{ livre.auteur }}</td>
+                                    <td>{{ livre.nbDePages }}</td>
+                                    <td>{{ livre.editur }}</td>
+                                    <td>
+                                        <a href="{{ path('livre_edit', { 'id': livre.id }) }}" class="badge bg-warning">Edit</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nom</th>
+                                <th>Resume</th>
+                                <th>Photo</th>
+                                <th>Auteur</th>
+                                <th>Nbdepages</th>
+                                <th>Editur</th>
+                                <th>Actions</th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset("back/plugins/datatables/jquery.dataTables.js") }}"></script>
+    <script src="{{ asset("back/plugins/datatables-bs4/js/dataTables.bootstrap4.js") }}"></script>
+    <!-- page script -->
+    <script>
+        $(function () {
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+            });
+        });
+    </script>
+{% endblock %}

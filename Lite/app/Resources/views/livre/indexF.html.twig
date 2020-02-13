@@ -1,0 +1,38 @@
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- Portfolio -->
+    <div class="portfolio portfolio-page container">
+        <div class="row">
+            <div class="portfolio-navigator span12">
+                <h4 class="filter-portfolio">
+                    <a class="all" id="active-imgs" href="#">All</a> /
+                    <a class="web-design" id="" href="#">Web Design</a> /
+                    <a class="logo-design" id="" href="#">Logo Design</a> /
+                    <a class="print-design" id="" href="#">Print Design</a>
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <ul class="portfolio-img">
+                {% for livre in livres %}
+                <li data-id="p-1" data-type="web-design" class="span3">
+                    <div class="work">
+                        <a href="{{ asset('/uploads/images/livres/') }}{{ livre.photo }}" rel="prettyPhoto">
+                            <img src="{{ asset('/uploads/images/livres/') }}{{ livre.photo }}" alt="">
+                        </a>
+                        <h4>{{livre.nom}}</h4>
+                        <p>{{livre.resume}}</p>
+                        <div class="ca-button">
+                            <a href="{{ path('reservation_new',{'id':livre.id}) }}">reserver</a>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+

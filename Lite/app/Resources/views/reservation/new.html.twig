@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Reservation creation</h1>
+    <div class="contact-us container">
+        <div class="row">
+            <div class="contact-form span12">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper <a href="">suscipit lobortis</a> nisl ut aliquip ex ea commodo consequat.</p>
+                {{ form_start(form) }}
+                    <label for="name" class="nameLabel">Date : </label>
+
+                {{ form_widget(form.date) }}
+                    <label for="email" class="emailLabel">Duree (en jour): </label>
+                {{ form_widget(form.duree,{'attr':{'max':'15','max':'1'}}) }}
+
+                    <input type="submit" class="btn " value="Send"/>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,34 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+    <section class="content">
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Categorie edit</h3>
+            </div>
+            <div class="card-body">
+                {{ form_start(edit_form) }}
+                <div class="form-group">
+                    <label >Nom : </label>
+                    {{ form_widget(edit_form.nom, { 'attr': {'class': 'form-control'} }) }}
+                </div>
+                <div class="form-group">
+                    <label >Discreption : </label>
+                    {{ form_widget(edit_form.discreption, { 'attr': {'class': 'form-control','rows':'5'} }) }}
+                </div>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary btn-block">edit</button>
+                <br>
+
+            </div>
+            {{ form_end(edit_form) }}
+            {{ form_start(delete_form) }}
+            <button type="submit" class="btn btn-primary btn-block btn-danger">Delete</button>
+            {{ form_end(delete_form) }}
+
+        </div>
+        <!-- /.card -->
+    </section>
+{% endblock %}
