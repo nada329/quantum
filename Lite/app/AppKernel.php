@@ -19,8 +19,14 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new UserBundle\UserBundle(),
+            new Nomaya\SocialBundle\NomayaSocialBundle(),
             new BibliothequeBundle\BibliothequeBundle(),
+            new EventBundle\EventBundle(),
+            new AdministrationBundle\AdministrationBundle(),
+            //new FOS\MessageBundle\FOSMessageBundle(),
         ];
+
+
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
             $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();

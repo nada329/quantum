@@ -1,3 +1,11 @@
+administration:
+    resource: "@AdministrationBundle/Resources/config/routing.yml"
+    prefix:   /
+
+event:
+    resource: "@EventBundle/Resources/config/routing.yml"
+    prefix:   /
+
 bibliotheque:
     resource: "@BibliothequeBundle/Resources/config/routing.yml"
     prefix:   /

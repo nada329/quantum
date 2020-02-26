@@ -29,7 +29,7 @@
             </li>
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="{{ path('homepage') }}" class="nav-link">Home Client</a>
-            </li>s
+            </li>
         </ul>
     </nav>
     <!-- /.navbar -->
@@ -108,6 +108,32 @@
                             </li>
                         </ul>
                     </li>
+                    <!----- Gestion des evenements --->
+
+                    <li class="nav-item has-treeview">
+                        <a href="{{ path('event_list') }}" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>
+                                Evènement
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ path('event_list') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Liste des évènements</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ path('event_new') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Ajouter un évènement</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -134,7 +160,15 @@
             </div><!-- /.container-fluid -->
         </section>
 
-
+        {% if app.request.hasPreviousSession %}
+            {% for type, messages in app.session.flashbag.all() %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ type }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
         {% block body %}{% endblock %}
         <!-- /.content -->
     </div>
@@ -151,6 +185,7 @@
 </div>
 
 <script src="{{ asset('back/plugins/jquery/jquery.min.js')}}"></script>
+<script src="{{ asset('assets/js/controle.js')}}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('back/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
