@@ -23,7 +23,7 @@
                             <span class="month">{{ dateTime | date('m') }}</span>
                             <span class="year">{{ dateTime | date('y') }}</span>
                         </time>
-                        <img alt="event §" src="{{ asset('uploads/images/Event/' ~ event.image) }}" />
+                        <img alt="event" src="{{ asset('uploads/images/Event/' ~ event.image) }}" />
                         <div class="info">
                             <h2 class="title">{{ event.titre }}</h2>
                             <p class="desc">{{ event.description }}</p>
@@ -33,7 +33,7 @@
 
 
                                     <a href="{{ path('accept',{'id':event.idevent}) }}"onClick="onclick">Participer</a>
-                                    <a onClick="onclick">S'intéresser</a>
+                                   {#<a onClick="onclick">S'intéresser</a>#}
                                     <a href="{{ path('Annuler',{'id':event.idevent}) }}" onClick="onclick">Annuler</a>
                                 </li>
                                 <li style="width:33%;">

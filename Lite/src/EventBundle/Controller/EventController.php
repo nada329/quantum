@@ -51,7 +51,9 @@ class EventController extends Controller
         $event=$em->getRepository("EventBundle:event")->find($id);
         $form=$this->createForm(EventType::class,$event);
         $form->handleRequest($request);
-        if ($form->isSubmitted()){
+        if ($form->isSubmitted()&& $form->isValid()) {
+            $event->upload();
+            $em = $this->getDoctrine()->getManager();
             $em->persist($event);
             $em->flush();
             return $this->redirectToRoute("event_list") ;

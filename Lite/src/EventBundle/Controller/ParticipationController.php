@@ -18,9 +18,9 @@ class ParticipationController extends Controller
         echo $nbP;
        /* return $this->render('@Event/Participation/affiche.html.twig',array(
             'event'=>$event   ));
-*/
 
-       /* $q = $cnx->createQueryBuilder()
+
+        $q = $cnx->createQueryBuilder()
             ->update('pfeBundle:conge', 'cng')
             ->set('cng.etat', '?1')
 
@@ -29,9 +29,11 @@ class ParticipationController extends Controller
             ->setParameter(2, $id)
             ->getQuery();
         $p = $q->execute();
-        //$resultat=$cnx->getRepository('pfeBundle:conge')->findAll();
+        $resultat=$cnx->getRepository('pfeBundle:conge')->findAll();
         return new response('demande validé');
-        //return $this->render('pfeBundle:Conge:listeconge.html.twig',array('liste'=>$resultat));*/
+        return $this->render('pfeBundle:Conge:listeconge.html.twig',array('liste'=>$resultat));
+
+       */
     }
 
 }
