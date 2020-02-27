@@ -1,0 +1,64 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <section class="container content">
+        <div class="row">
+            <div class="col-6">
+                <!-- /.card -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">DataTable with default features</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="CourTable" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>nom </th>
+                                <th>File</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in scours %}
+                                <tr>
+                                    <td>{{ i.nom }}</td>
+                                    <td><a href="{{ asset('/uploads/images/cours/images/') }}{{ i.image }}">{{ i.image }}</a></td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th>nom </th>
+                                <th>File</th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+{% endblock %}
+
+
+{% block javascripts %}
+    <!-- DataTables -->
+    <script src="{{ asset("back/plugins/datatables/jquery.dataTables.js") }}"></script>
+    <script src="{{ asset("back/plugins/datatables-bs4/js/dataTables.bootstrap4.js") }}"></script>
+    <script>
+        $(function () {
+            $("#CourTable").DataTable();
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true,
+            });
+        });
+    </script>
+{% endblock %}

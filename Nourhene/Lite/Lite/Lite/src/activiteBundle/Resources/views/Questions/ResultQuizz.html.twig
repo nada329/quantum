@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <div class="col-lg-12">
+        <h1 class="page-header">Quiz</h1>
+        <h1> Score : {{ score }} / {{ count }}</h1>
+    {% if  score   >=  count / 2 %}
+        <a href="{{ path('quizresultpdf')}}"> <h2>Télecharger la Certification en PDF</h2> </a>
+    {% endif %}
+    </div>
+
+{% endblock %}
+{% block javascript %}
+
+{% endblock %}

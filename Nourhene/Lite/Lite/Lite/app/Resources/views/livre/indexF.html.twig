@@ -1,0 +1,51 @@
+
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <style>
+        .img-livre {
+            display: block;
+            max-width:270px;
+            max-height:200px;
+            width: 270px;
+            height: 200px;"
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <!-- Portfolio -->
+    <div class="portfolio portfolio-page container">
+        <div class="row">
+            <div class="portfolio-navigator span12">
+                <h4 class="filter-portfolio">
+                    <a class="all" id="active-imgs" href="#">All</a> /
+                    {% for categorie in categories %}
+                    <a class="{{ categorie.nom }}" id="" href="#">{{ categorie.nom }}</a> /
+                    {% endfor %}
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <ul class="portfolio-img">
+                {% for livre in livres %}
+                <li data-id="p-1" data-type="{{livre.category.nom}}" class="span3">
+                    <div class="work">
+                            <img class="img-livre" src="{{ asset('/uploads/images/livres/') }}{{ livre.photo }}" alt="">
+                        <h4>{{livre.nom}}</h4>
+                        <p>{{livre.resume}}</p>
+                        <div class="icon-awesome">
+                            <a  href="{{ path('livre_show',{'id':livre.id}) }}" ><i class="icon-search"></i></a>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('front/assets/js/scripts.js') }}"></script>
+{% endblock %}
+
+

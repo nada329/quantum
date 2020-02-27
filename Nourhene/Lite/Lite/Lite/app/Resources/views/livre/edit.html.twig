@@ -1,0 +1,88 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Livre edit</h3>
+            </div>
+            <div class="card-body">
+                {{ form_start(edit_form) }}
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nom : </label>
+                    {% if edit_form.nom.vars.valid==true %}
+                        {{ form_widget(edit_form.nom, { 'attr': {'class': 'form-control','row':'1'} }) }}
+                    {% else %}
+                        {{ form_widget(edit_form.nom, { 'attr': {'class': 'form-control is-invalid','row':'1'} }) }}
+                    {% endif %}
+                    <span class="error invalid-feedback">{{ form_errors(edit_form.nom) }}</span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Quantity : </label>
+                    {% if edit_form.quantity.vars.valid==true %}
+                        {{ form_widget(edit_form.quantity, { 'attr': {'class': 'form-control','row':'1'} }) }}
+                    {% else %}
+                        {{ form_widget(edit_form.quantity, { 'attr': {'class': 'form-control is-invalid','row':'1'} }) }}
+                    {% endif %}
+                    <span class="error invalid-feedback">{{ form_errors(edit_form.quantity) }}</span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Discreption : </label>
+                    {% if edit_form.resume.vars.valid==true %}
+                        {{ form_widget(edit_form.resume, { 'attr': {'class': 'form-control','row':'1'} }) }}
+                    {% else %}
+                        {{ form_widget(edit_form.resume, { 'attr': {'class': 'form-control is-invalid','row':'1'} }) }}
+                    {% endif %}
+                    <span class="error invalid-feedback">{{ form_errors(edit_form.resume) }}</span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Auteur : </label>
+                    {% if edit_form.auteur.vars.valid==true %}
+                        {{ form_widget(edit_form.auteur, { 'attr': {'class': 'form-control','row':'1'} }) }}
+                    {% else %}
+                        {{ form_widget(edit_form.auteur, { 'attr': {'class': 'form-control is-invalid','row':'1'} }) }}
+                    {% endif %}
+                    <span class="error invalid-feedback">{{ form_errors(edit_form.auteur) }}</span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nombre De Page : </label>
+                    {% if edit_form.nbDePages.vars.valid==true %}
+                        {{ form_widget(edit_form.nbDePages, { 'attr': {'class': 'form-control','row':'1'} }) }}
+                    {% else %}
+                        {{ form_widget(edit_form.nbDePages, { 'attr': {'class': 'form-control is-invalid','row':'1'} }) }}
+                    {% endif %}
+                    <span class="error invalid-feedback">{{ form_errors(edit_form.nbDePages) }}</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Editeur : </label>
+                    {% if edit_form.editur.vars.valid==true %}
+                        {{ form_widget(edit_form.editur, { 'attr': {'class': 'form-control','row':'1'} }) }}
+                    {% else %}
+                        {{ form_widget(edit_form.editur, { 'attr': {'class': 'form-control is-invalid','row':'1'} }) }}
+                    {% endif %}
+                    <span class="error invalid-feedback">{{ form_errors(edit_form.editur) }}</span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">Categorie : </label>
+                    {{ form_widget(edit_form.category, { 'attr': {'class': 'form-control','rows':'5'} }) }}
+                </div>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary btn-block">Edit</button>
+                <br>
+
+            </div>
+            {{ form_end(edit_form) }}
+            {{ form_start(delete_form) }}
+            <button type="submit" class="btn btn-primary btn-block btn-danger">Delete</button>
+            {{ form_end(delete_form) }}
+
+        </div>
+        <!-- /.card -->
+
+    </section>
+{% endblock %}

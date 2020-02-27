@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Reservations list</h1>
+
+    <table id="example1" class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Resume</th>
+            <th>Photo</th>
+            <th>Auteur</th>
+            <th>Nbdepages</th>
+            <th>Editur</th>
+            <th>Statu</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for reservation in reservations %}
+            <tr>
+                <td>{{ reservation.id }}</td>
+                <td>{{ reservation.livre.nom }}</td>
+                <td>{{ reservation.livre.resume }}</td>
+                <td class="patient-img sorting_1" style=" width: 40px; height: 40px">
+                    <img src="{{ asset('/uploads/images/livres/') }}{{ reservation.livre.photo }}"  style=" width: 80px; height: 80px" alt="">
+                </td>
+                <td>{{ reservation.livre.auteur  }}</td>
+                <td>{{ reservation.livre.nbDePages }}</td>
+                <td>{{ reservation.livre.editur }}</td>
+                <td >{{ reservation.state }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Resume</th>
+            <th>Photo</th>
+            <th>Auteur</th>
+            <th>Nbdepages</th>
+            <th>Editur</th>
+            <th>Actions</th>
+        </tr>
+        </tfoot>
+    </table>
+
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset("back/plugins/datatables/jquery.dataTables.js") }}"></script>
+    <script src="{{ asset("back/plugins/datatables-bs4/js/dataTables.bootstrap4.js") }}"></script>
+    <!-- page script -->
+    <script>
+        $(function () {
+            $('#example1').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+            });
+        });
+    </script>
+{% endblock %}

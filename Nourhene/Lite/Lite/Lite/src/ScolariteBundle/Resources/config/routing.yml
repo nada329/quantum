@@ -1,0 +1,3 @@
+scolarite_homepage:
+    path:     /
+    defaults: { _controller: ScolariteBundle:Default:index }

@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+{% endblock %}
+
+
+{% block body %}
+    <div class="contact-us container">
+        <div class="row">
+            <div class="contact-form span7">
+                <p>{{livre.resume}}</p>
+                <h4>Categorie : </h4>
+                <p>{{ livre.category.nom }}</p>
+                <h4>Auteur : </h4>
+                <p>{{ livre.auteur }}</p>
+                <h4>Nombre De Page : </h4>
+                <p>{{ livre.nbDePages }}</p>
+                <h4>Quantity</h4>
+                <p>{{ livre.quantity }}</p>
+                {% if livre.quantity > 0 %}
+                    <a href="{{ path('reservation_new',{'id':livre.id}) }}" class="btn btn-block" >reserver</a>
+                {% else %}
+                    <div class="alert alert-warning" role="alert">
+                        <strong>Warning!</strong> Livre n'est pas disponible pour le moment.
+                    </div>
+                {% endif %}
+
+            </div>
+            <div class="contact-address span5">
+                <h4></h4>
+                <div class="">
+                    <img src="{{ asset('/uploads/images/livres/') }}{{ livre.photo }}">
+                </div>
+                <h4>AVIS</h4>
+                <p>{{ avis | rating }}</p>
+
+                {{ form_start(form,{'attr':{'id':'ratingFormB','class':'form-inline'}}) }}
+                {% if form.rating.vars.value >0  %}
+                    <div class="input-group">
+                        <h4>My Rate</h4>
+                        {{ form_widget(form.rating ,{'attr' : {'id':'ratingInput','disabled':'' }} )}}
+                    </div>
+                {% else %}
+                    <h4>Rate</h4>
+                    <div class="input-group">
+                        {{ form_widget(form.rating ,{'attr' : {'id':'ratingInput'}} )}}
+                        <div class="input-group-append">
+                            <input  class="btn btn-outline-secondary" type="submit"/>
+                        </div>
+                    </div>
+
+                {% endif %}
+
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
+    <script>
+
+
+    </script>
+{% endblock %}
+
+

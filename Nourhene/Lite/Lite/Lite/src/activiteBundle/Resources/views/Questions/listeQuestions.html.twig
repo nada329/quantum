@@ -1,0 +1,89 @@
+{% extends "baseAdmin.html.twig" %}
+
+{% block stylesheets  %}
+    <style>
+      .correct {
+          color: red;
+      }
+    </style>
+{% endblock %}
+{% block body %}
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <!-- /.card -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">DataTable with default features</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="CourTable" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>Question ID</th>
+                                <th>Question</th>
+
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in questions %}
+                                <tr>
+                                    <td>questions {{ i.id }}
+
+                                    </td>
+                                    <td>{{ i.question }}
+                                        {% for j in reponseList %}
+                                            {% if (i == j.question) %}
+                                         <p class=" {{ j.valeur }} ">   {{ j.reponse }} </p>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </td>
+
+
+                                    <td><a href="{{ path('delete_questions',{'id':i.id}) }}">Delete</a>
+                                        <a href="{{ path('update_questions',{'id':i.id}) }}">Update</a>
+                                    <a href="{{ path('add_reponse',{'id':i.id}) }}">addReponse</a> </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th>Question ID</th>
+                                <th>Question</th>
+
+                                <th>Actions</th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+{% endblock %}
+
+
+{% block javascripts %}
+    <!-- DataTables -->
+    <script src="{{ asset("back/plugins/datatables/jquery.dataTables.js") }}"></script>
+    <script src="{{ asset("back/plugins/datatables-bs4/js/dataTables.bootstrap4.js") }}"></script>
+    <script>
+        $(function () {
+            $("#CourTable").DataTable();
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true,
+            });
+        });
+    </script>
+{% endblock %}
