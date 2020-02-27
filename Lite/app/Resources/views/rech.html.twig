@@ -1,0 +1,51 @@
+{% extends "baseAdmin.html.twig" %}
+{% block container %}
+<center>
+    <h1> Rechercher </h1>
+
+    <form method="POST">
+
+        nom <input type="text" name="nom">
+
+        <input type="submit" nam="submit" value="recherche">
+
+
+
+    </form>
+
+    <table border="3">
+
+        <thead>
+        <tr>
+            <th>ID : </th>
+
+            <th>Nom :</th>
+
+            <th>Prenom :</th>
+
+
+            <th>Date de naissance :</th>
+
+
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for eleve in eleves %}
+            <tr>
+                <td>{{ eleve.id }}   </td>
+                <td>{{ eleve.nom }}</td>
+                <td>{{ eleve.prenom }}</td>
+                <td>{{ eleve.dateDeNaissance|date("m/d/Y")}}</td>
+
+
+                <td><a href="{{ path("supp_Eleve", {'id':eleve.id})}}">supprimer</a></td>
+                <td><a href="{{ path("modif_Eleve", {'id':eleve.id})}}">modifier</a></td>
+
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+</center>
+{% endblock %}

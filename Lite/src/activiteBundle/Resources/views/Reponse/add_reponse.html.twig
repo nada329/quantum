@@ -1,0 +1,18 @@
+{% extends "baseAdmin.html.twig" %}
+{% block body %}
+    <div class="col-lg-12">
+        <h1 class="page-header">reponse Forms</h1>
+    </div>
+    {{ form_start(form) }}
+
+
+    <div class="form-group">
+        <label class="col-form-label" for="inputSuccess"> reponse</label>
+        {{ form_widget(form.reponse,{'attr': {'class': 'form-control'}} )}}
+    </div>
+
+
+
+    {{ form_rest(form) }}
+
+{% endblock %}

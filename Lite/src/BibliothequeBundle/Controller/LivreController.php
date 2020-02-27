@@ -106,8 +106,15 @@ class LivreController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->remove($livre);
-            $em->flush();
+            $reservation = $em->getRepository('UserBundle:Reservation')->findBy(array('livre'=>$livre->getId()));
+            if($reservation){
+                $this->addFlash("warning", "livre est reservé");
+            }else{
+                $em->remove($livre);
+                $em->flush();
+                $this->addFlash("success", "liver suprrimé");
+            }
+
         }
 
         return $this->redirectToRoute('livre_index');

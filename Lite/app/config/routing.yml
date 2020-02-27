@@ -1,3 +1,11 @@
+scolarite:
+    resource: "@ScolariteBundle/Resources/config/routing.yml"
+    prefix:   /
+
+activite:
+    resource: "@activiteBundle/Resources/config/routing.yml"
+    prefix:   /
+
 bibliotheque:
     resource: "@BibliothequeBundle/Resources/config/routing.yml"
     prefix:   /

@@ -1,0 +1,18 @@
+{% extends "baseAdmin.html.twig" %}
+{% block body %}
+    <div class="col-lg-12">
+        <h1 class="page-header">Questions Forms</h1>
+    </div>
+    {{ form_start(form) }}
+
+
+    <div class="form-group">
+        <label class="col-form-label" for="inputSuccess"> questions</label>
+        {{ form_widget(form.question,{'attr': {'class': 'form-control'}} )}}
+    </div>
+
+
+
+    {{ form_rest(form) }}
+
+{% endblock %}

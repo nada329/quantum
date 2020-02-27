@@ -1,0 +1,54 @@
+
+scolarite_homepage:
+    path:     /afficheeleves
+    defaults: { _controller: ScolariteBundle:Eleve:affichereleves }
+
+supp_Eleve:
+    path:     /supprimeeleves/{id}
+    defaults: { _controller: ScolariteBundle:Eleve:supprimereleves }
+
+
+eleve_ajout:
+    path:    /ajouteleve
+    defaults: { _controller: ScolariteBundle:Eleve:ajouteleve }
+
+modif_Eleve:
+    path:     /updateeleve/{id}
+    defaults: { _controller: ScolariteBundle:Eleve:updateeleve }
+
+enseignant_homepage:
+    path:     /afficheenseignants
+    defaults: { _controller: ScolariteBundle:Enseignant:afficherenseignants }
+
+supp_Enseignant:
+    path:     /supprimeenseignant/{id}
+    defaults: { _controller: ScolariteBundle:Enseignant:supprimerenseignants }
+
+enseignant_ajout:
+    path:    /ajoutenseignant
+    defaults: { _controller: ScolariteBundle:Enseignant:ajoutenseignant }
+
+modif_Enseignant:
+    path:     /updateenseignant/{id}
+    defaults: { _controller: ScolariteBundle:Enseignant:updateenseignant }
+
+classe_ajout:
+    path:    /ajoutclasse
+    defaults: { _controller: ScolariteBundle:Classe:ajoutclasse }
+
+classe_homepage:
+    path:     /afficheclasse
+    defaults: { _controller: ScolariteBundle:Classe:afficheclasse }
+
+supp_classe:
+    path:     /supprimeclasse/{id}
+    defaults: { _controller: ScolariteBundle:Classe:supprimeclasse }
+
+modif_classe:
+    path:     /updateclasse/{id}
+    defaults: { _controller: ScolariteBundle:Classe:updateclasse }
+
+rech_Eleve:
+    path:     /recherche
+    defaults: { _controller: ScolariteBundle:Eleve:rechercheeleve }
+

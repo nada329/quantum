@@ -1,0 +1,28 @@
+{% extends "baseAdmin.html.twig" %}
+
+{% block container %}
+
+<h1> Modifier une classe </h1>
+{{ form_start(f) }}
+<table>
+
+    <tr>
+        <th> NOM: </th>
+        <td>{{ form_widget(f.nom) }}</td>
+    </tr>
+    <tr>
+        <th> SALLE: </th>
+        <td>{{ form_widget(f.salle) }}</td>
+    </tr>
+
+
+    <tr>
+        <th> SPECIALITE: </th>
+        <td>{{ form_widget(f.specialite) }}</td>
+    </tr>
+
+
+</table>
+{{ form_end(f) }}
+
+{% endblock %}
