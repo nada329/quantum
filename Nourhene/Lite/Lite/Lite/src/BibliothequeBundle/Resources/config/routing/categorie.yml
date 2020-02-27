@@ -1,0 +1,17 @@
+categorie_index:
+    path:     /
+    defaults: { _controller: "BibliothequeBundle:Categorie:index" }
+
+categorie_new:
+    path:     /new
+    defaults: { _controller: "BibliothequeBundle:Categorie:new" }
+
+categorie_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BibliothequeBundle:Categorie:edit" }
+
+
+categorie_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BibliothequeBundle:Categorie:delete" }
+

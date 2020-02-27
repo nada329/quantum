@@ -1,0 +1,42 @@
+event_homepage:
+    path:     /event
+    defaults: { _controller: EventBundle:Default:index }
+
+event_list:
+    path:     /list
+    defaults: { _controller: EventBundle:Event:list }
+
+edit:
+      path:    /edit/{id}
+      defaults: { _controller: EventBundle:Event:edit }
+
+event_new:
+      path:     /event/new
+      defaults: { _controller: EventBundle:Event:new }
+
+event_show:
+  path:     /event_show/{id}
+  defaults: { _controller: EventBundle:Event:show }
+
+event_delete:
+  path:     /event_delete/{id}
+  defaults: { _controller: EventBundle:Event:delete }
+
+front_list:
+  path:     /front_list
+  defaults: { _controller: EventBundle:Event:frontlist }
+
+affiche:
+  path:     /affiche
+  defaults: { _controller: EventBundle:Event:frontlist }
+
+
+accept:
+  path:     /accept/{id}
+  defaults: { _controller: EventBundle:Event:GererNB }
+Annuler:
+  path:     /Annuler/{id}
+  defaults: { _controller: EventBundle:Event:AnnulerNB }
+
+
+

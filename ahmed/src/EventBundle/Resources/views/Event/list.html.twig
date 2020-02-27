@@ -1,0 +1,51 @@
+
+{% extends 'baseAdmin.html.twig' %}
+{% block body %}
+
+
+
+                        <table id="example1" class="table table-bordered table-striped">
+                            <head>
+                            <tr>
+                                <th>Id</th>
+                                <th>Titre</th>
+                                <th>Datedebut</th>
+                                <th>Datefin</th>
+                                <th>Image</th>
+                                <th>Adresse</th>
+                                <th>Type</th>
+                                <th>Nb</th>
+                                <th>Description</th>
+                                <th></th>
+                            </tr>
+                            </head>
+                            <h1>Events list</h1>
+
+                            <body>
+                            {% for event in events %}
+                                <tr>
+                                    <td>{{ event.idevent }}</td>
+                                    <td>{{ event.titre }}</td>
+                                    <td>{% if event.dateDebut %}{{ event.dateDebut|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                    <td>{% if event.dateFin %}{{ event.dateFin|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                    <td>{{ event.image }}</td>
+
+                                    <td>{{ event.adresseEvent }}</td>
+                                    <td>{{ event.typeEvent }}</td>
+                                    <td>{{ event.NbP }}</td>
+                                    <td>{{ event.description }}</td>
+                                    <td>
+                                    <a href="{{ path('edit', { 'id': event.idevent }) }}"><i class="fa fa-edit" style="font-size:18px"></i></a>
+                                        <a href="{{ path('event_delete', { 'id': event.idevent }) }}"><i class="fa fa-trash" style="font-size:18px"></i></a>
+                                        <a href="{{ path('event_show', { 'id': event.idevent }) }}"><i class="fa fa-eye" style="font-size:18px"></i></a>
+
+                                    </td>
+                                </tr>
+
+                            {% endfor %}
+                            </body>
+
+
+                        </table>
+
+                        {% endblock %}

@@ -1,0 +1,4 @@
+services:
+    activite.Reponse:
+        class: activiteBundle\Controller\ReponseController
+        arguments: ["@service_container"]

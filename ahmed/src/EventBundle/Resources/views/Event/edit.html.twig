@@ -1,0 +1,144 @@
+
+
+{% extends 'baseAdmin.html.twig' %}
+{% block body %}
+    <h1> Modification d'un évenement </h1>
+<div style="width:75%; margin: auto">
+   {#<input type="hidden" value="{{ dt }}" id="dtNow">#}
+    {{ form_start(form) }}
+
+    {#{{ form_widget(form) }}#}
+
+    <div class="form-group col-md-6">
+        <label for="inputEmail4">{{ form_label(form.titre) }}</label>
+        {{ form_widget(form.titre) }}
+    </div>
+
+    <div class="form-group col-md-6">
+        <label for="inputEmail4">{{ form_label(form.dateDebutEvent) }}</label>
+        {{ form_widget(form.dateDebutEvent,{'attr':{'class':'form-control'}}) }}
+        <span id="dbs" style="color:red"></span>
+
+    </div>
+    <div class="form-group col-md-6">
+        <label for="inputEmail4">{{ form_label(form.dateFEvent) }}</label>
+        {{ form_widget(form.dateFEvent,{'attr':{'class':'form-control'}}) }}
+    </div>
+
+
+
+    <div class="form-group col-md-6">
+        <label for="inputEmail4">{{ form_label(form.adresseEvent) }}</label>
+        {{ form_widget(form.adresseEvent,{'attr':{'class':'form-control'}}) }}
+
+    </div>
+    <div class="form-group col-md-6">
+        <label for="inputEmail4">{{ form_label(form.image) }}</label>
+        {{ form_widget(form.image,{'attr':{'class':'form-control'}}) }}
+
+    </div>
+    <div class="form-group col-md-6">
+        <label for="inputEmail4">{{ form_label(form.nbP) }}</label>
+        {{ form_widget(form.nbP,{'attr':{'class':'form-control'}}) }}
+
+    </div>
+    <div class="form-group col-md-6">
+        <label for="inputEmail4">{{ form_label(form.typeEvent) }}</label>
+        {{ form_widget(form.typeEvent,{'attr':{'class':'form-control'}}) }}
+
+    </div>
+    <div class="form-group col-md-6">
+        <label for="inputEmail4">{{ form_label(form.description) }}</label>
+        {{ form_widget(form.description,{'attr':{'class':'form-control'}}) }}
+
+    </div>
+
+    <input type="submit" value="Modifier"  class="btn btn-success">
+    {{ form_end(form) }}
+</div>
+<hr>
+
+
+<ul>
+    <li>
+        <a href="{{ path('event_list') }}">Back to the list</a>
+    </li>
+</ul>
+
+{% endblock %}
+
+
+
+
+{#
+{% extends 'baseAdmin.html.twig' %}
+{% block body %}
+    <h1> Modification d'un évenement </h1>
+    <div style="width:75%; margin: auto">
+        {{ form_start(form) }}
+
+        #}
+{#{{ form_widget(form) }}#}{#
+
+
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">{{ form_label(form.titre) }}</label>
+            {{ form_widget(form.titre) }}
+
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">{{ form_label(form.dateDebutEvent) }}</label>
+            {{ form_widget(form.dateDebutEvent,{'attr':{'class':'form-control'}}) }}
+            <span id="dbs" style="color:red"></span>
+
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">{{ form_label(form.dateFEvent) }}</label>
+            {{ form_widget(form.dateFEvent,{'attr':{'class':'form-control'}}) }}
+
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">{{ form_label(form.adresseEvent) }}</label>
+            {{ form_widget(form.adresseEvent,{'attr':{'class':'form-control'}}) }}
+
+        </div>
+       {{ form_widget(form.image)}}
+
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">{{ form_label(form.nbP) }}</label>
+            {{ form_widget(form.nbP,{'attr':{'class':'form-control'}}) }}
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">{{ form_label(form.typeEvent) }}</label>
+            {{ form_widget(form.typeEvent,{'attr':{'class':'form-control'}}) }}
+
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">{{ form_label(form.description) }}</label>
+            {{ form_widget(form.description,{'attr':{'class':'form-control'}}) }}
+
+        </div>
+
+        <input type="submit" value="Modifier"  class="btn btn-success">
+        {{ form_end(form) }}
+    </div>
+
+    <hr>
+
+
+    <ul>
+        <li>
+            <a href="{{ path('event_list') }}">Back to the list</a>
+        </li>
+    </ul>
+
+
+
+{% endblock %}
+#}
+
+
+
+

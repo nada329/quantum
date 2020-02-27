@@ -1,0 +1,46 @@
+
+
+add_cours:
+    path:     /addcours
+    defaults: { _controller: activiteBundle:Cours:AddCours }
+
+list_cours:
+    path:     /listcours
+    defaults: { _controller: activiteBundle:Cours:ListCours }
+
+update_cours:
+    path:     /updatecour/{id}
+    defaults: { _controller: activiteBundle:Cours:UpdateCours }
+delete_cours:
+    path:     /deletecour/{id}
+    defaults: { _controller: activiteBundle:Cours:DeleteCours }
+listcoursetquiz_cours:
+     path:     /ListCoursEtQuiz
+     defaults: { _controller: activiteBundle:Cours:ListCoursEtQuiz }
+addQuestion:
+    path:     /addQuestion
+    defaults: { _controller: activiteBundle:Questions:addQuestion }
+
+listeQuestions:
+    path:     /listeQuestions
+    defaults: { _controller: activiteBundle:Questions:listeQuestions }
+
+update_questions:
+    path:     /updateQuestions/{id}
+    defaults: { _controller: activiteBundle:Questions:updateQuestions }
+
+delete_questions:
+    path:     /deletequestions/{id}
+    defaults: { _controller: activiteBundle:Questions:DeleteQuestions }
+add_reponse:
+    path:     /addReponse/{id}
+    defaults: { _controller: activiteBundle:Reponse:addReponse }
+listcoursetquiz:
+    path:     /ListQuiz
+    defaults: { _controller: activiteBundle:ReponseEleve:ListQuiz }
+quizresult:
+    path:     /QuizResult
+    defaults: { _controller: activiteBundle:ReponseEleve:QuizResult }
+quizresultpdf:
+    path:     /QuizResultPdf
+    defaults: { _controller: activiteBundle:ReponseEleve:QuizResultPdf }
