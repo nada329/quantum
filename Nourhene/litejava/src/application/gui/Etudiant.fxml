@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.gui.EtudiantController">
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Quizz">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="29.0" layoutY="71.0" prefHeight="17.0" prefWidth="65.0" text="Question" />
+                        <ComboBox fx:id="liste_questions1" layoutX="131.0" layoutY="67.0" onAction="#afficher_reponses" prefHeight="25.0" prefWidth="339.0" />
+                        <CheckBox fx:id="rep1" layoutX="58.0" layoutY="157.0" mnemonicParsing="false" onAction="#disable1" />
+                        <CheckBox fx:id="rep3" layoutX="58.0" layoutY="244.0" mnemonicParsing="false" onAction="#disable3" />
+                        <CheckBox fx:id="rep2" layoutX="58.0" layoutY="199.0" mnemonicParsing="false" onAction="#disable2" />
+                        <Button fx:id="envoyer_rep" layoutX="37.0" layoutY="317.0" mnemonicParsing="false" onAction="#verif_reponses" text="Envoyer" />
+                        <TextField fx:id="rep1_txt" disable="true" layoutX="94.0" layoutY="153.0" prefHeight="25.0" prefWidth="379.0" />
+                        <TextField fx:id="rep2_txt" disable="true" layoutX="94.0" layoutY="195.0" prefHeight="25.0" prefWidth="380.0" />
+                        <TextField fx:id="rep3_txt" disable="true" layoutX="94.0" layoutY="240.0" prefHeight="25.0" prefWidth="382.0" />
+                        <Label fx:id="msg" disable="true" layoutX="215.0" layoutY="118.0" text="Vous n'avez aucun Quizz a faire" visible="false" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Resultat Quizz">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="114.0" prefHeight="17.0" prefWidth="104.0" text="Score des quizz" />
+                        <TextField fx:id="score_quizz" disable="true" layoutX="150.0" layoutY="110.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

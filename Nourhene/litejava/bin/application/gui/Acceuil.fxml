@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.gui.CoursController">
+   <center>
+      <AnchorPane prefHeight="500" prefWidth="500" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" spacing="20.0">
+               <children>
+                  <Button fx:id="gestion_cours" mnemonicParsing="false" onAction="#gotoCours" prefHeight="25.0" prefWidth="142.0" text="Gestion des Activités" />
+                  <Button fx:id="etudiant" mnemonicParsing="false" onAction="#gotoEtudiant" prefHeight="25.0" prefWidth="125.0" text="Etudiant" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
