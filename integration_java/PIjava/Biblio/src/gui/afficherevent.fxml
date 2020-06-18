@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="515.0" prefWidth="797.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AffichereventController">
+   <children>
+      <ImageView fitHeight="617.0" fitWidth="914.0" layoutX="-9.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/unnamed.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tablev" layoutX="86.0" layoutY="211.0" prefHeight="307.0" prefWidth="691.0">
+        <columns>
+          <TableColumn fx:id="nomEvent" prefWidth="69.0" text="Nom Event" />
+          <TableColumn fx:id="dateEvent" prefWidth="70.0" text="Date Event" />
+            <TableColumn fx:id="nb_p" prefWidth="92.0" text="Nb participants" />
+            <TableColumn fx:id="prix" prefWidth="42.0" text="Prix" />
+            <TableColumn fx:id="description" prefWidth="104.0" text="Description" />
+            <TableColumn fx:id="adresse_event" prefWidth="90.0" text="Adresse Event" />
+            <TableColumn fx:id="type_event" prefWidth="97.0" text="Type Event" />
+            <TableColumn fx:id="image" prefWidth="126.0" text="Image" />
+        </columns>
+      </TableView>
+      <Text layoutX="276.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rechercher" wrappingWidth="151.13671875">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="rech" layoutX="380.0" layoutY="61.0" prefHeight="25.0" prefWidth="159.0" />
+      <Button fx:id="btnret" layoutX="86.0" layoutY="553.0" mnemonicParsing="false" onAction="#ret" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #6aa437;" text="Retour" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Button fx:id="btnedit" layoutX="684.0" layoutY="555.0" mnemonicParsing="false" onAction="#edit" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #6aa437;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Button fx:id="btndel" layoutX="577.0" layoutY="555.0" mnemonicParsing="false" onAction="#del" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #6aa437;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Button fx:id="btnimp1" layoutX="798.0" layoutY="531.0" mnemonicParsing="false" onAction="#imp" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #6aa437;" text="Imprimer" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

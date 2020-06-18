@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Biblio/src"/>
+	<classpathentry kind="lib" path="Biblio/dist/lib/controlsfx-8.40.11.jar"/>
+	<classpathentry kind="lib" path="Biblio/dist/lib/file-utils.jar"/>
+	<classpathentry kind="lib" path="Biblio/dist/lib/fontawesomefx-8.0.1.jar"/>
+	<classpathentry kind="lib" path="Biblio/dist/lib/fontawesomefx-8.1.jar"/>
+	<classpathentry kind="lib" path="Biblio/dist/lib/jfoenix-8.0.8.jar"/>
+	<classpathentry kind="lib" path="Biblio/dist/lib/mysql-connector-java-5.1.23-bin.jar"/>
+	<classpathentry kind="lib" path="Biblio/dist/lib/org.apache.commons.io.jar"/>
+	<classpathentry kind="lib" path="Biblio/dist/lib/poi-3.9.jar"/>
+	<classpathentry kind="lib" path="Biblio/dist/lib/twilio-7.9.1-jar-with-dependencies.jar"/>
+	<classpathentry kind="lib" path="Biblio/dist/pi.jar"/>
+	<classpathentry kind="lib" path="Biblio/dist/lib/pdfbox-2.0.19.jar"/>
+	<classpathentry kind="lib" path="/Biblio/dist/lib/fontbox-2.0.19.jar"/>
+	<classpathentry kind="lib" path="/event/dist/lib/poi-ooxml-3.17.0.wso2v1.jar"/>
+	<classpathentry kind="lib" path="/event/dist/lib/javax.mail-1.6.2.jar"/>
+	<classpathentry kind="output" path="Biblio/build/classes"/>
+</classpath>

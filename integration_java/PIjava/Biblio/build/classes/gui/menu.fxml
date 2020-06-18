@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="485.0" prefWidth="778.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MenuController">
+   <children>
+      <ImageView fitHeight="585.0" fitWidth="833.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/unnamed.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnaff" layoutX="14.0" layoutY="107.0" mnemonicParsing="false" onAction="#affevent" prefHeight="40.0" prefWidth="196.0" style="-fx-background-color: #6aa437;" text="Afficher event" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Button fx:id="btnret" layoutX="596.0" layoutY="433.0" mnemonicParsing="false" onAction="#ret" prefHeight="34.0" prefWidth="133.0" style="-fx-background-color: #6aa437;" text="Déconnexion" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnaj" layoutX="14.0" layoutY="42.0" mnemonicParsing="false" onAction="#ajoutereve" prefHeight="40.0" prefWidth="196.0" style="-fx-background-color: #6aa437;" text="Ajouter event" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

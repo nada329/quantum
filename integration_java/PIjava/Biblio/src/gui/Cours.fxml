@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GestionCoursController">
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Ajouter Cour">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="50.0" text="Libelle cour" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="100.0" text="Nom Cour" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="150.0" text="Fichier PDF" />
+                        <TextField fx:id="libelle_cour" layoutX="80.0" layoutY="46.0" />
+                        <TextField fx:id="nom_cour" layoutX="80.0" layoutY="96.0" />
+                        <TextField fx:id="pdf_cour" layoutX="80.0" layoutY="146.0" />
+                        <Button fx:id="import_pdf" layoutX="238.0" layoutY="146.0" mnemonicParsing="false" onAction="#selectImage" text="Importer" />
+                        <Button fx:id="ajouter_cour" layoutX="17.0" layoutY="200.0" mnemonicParsing="false" onAction="#ajouterCour" text="Ajouter" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Liste des Cours">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="listeCours" layoutX="10.0" layoutY="70.0" prefHeight="200.0" prefWidth="590.0">
+                          <columns>
+                            <TableColumn fx:id="Libelle" onEditCommit="#Changer_LibelleCour" prefWidth="75.0" text="Libelle" />
+                            <TableColumn fx:id="Nom" onEditCommit="#Changer_NomCour" prefWidth="75.0" text="Nom" />
+                              <TableColumn fx:id="PDF" onEditCommit="#Changer_PDFCour" prefWidth="75.0" text="PDF" />
+                              <TableColumn fx:id="Prof" onEditCommit="#Changer_NomProfCour" prefWidth="75.0" text="Prof" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="supprimer_cour" layoutX="10.0" layoutY="335.0" mnemonicParsing="false" onAction="#supprimerCour" text="Supprimer" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="39.0" prefHeight="17.0" prefWidth="76.0" text="Recherhcer" />
+                        <TextField fx:id="recherche" layoutX="90.0" layoutY="35.0" prefHeight="25.0" prefWidth="223.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Quizz">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                          <tabs>
+                              <Tab text="Ajouter Question">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="57.0" prefHeight="17.0" prefWidth="87.0" text="Question" />
+                                          <TextField fx:id="question" layoutX="109.0" layoutY="53.0" prefHeight="25.0" prefWidth="369.0" />
+                                          <Button fx:id="ajouter_question" layoutX="240.0" layoutY="117.0" mnemonicParsing="false" onAction="#ajouter_Question" text="Ajouter Question" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                            <Tab text="Ajouter Quizz">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" layoutX="30.0" layoutY="52.0" prefHeight="17.0" prefWidth="65.0" text="Question" />
+                                          <ComboBox fx:id="liste_questions" layoutX="97.0" layoutY="48.0" prefHeight="25.0" prefWidth="339.0" />
+                                          <Label alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="96.0" prefHeight="17.0" prefWidth="65.0" text="Reponse" />
+                                          <TextField fx:id="reponse" layoutX="96.0" layoutY="92.0" prefHeight="25.0" prefWidth="341.0" />
+                                          <Button fx:id="ajouter_reponse" layoutX="237.0" layoutY="159.0" mnemonicParsing="false" onAction="#ajouter_Reponse" text="Ajouter Reponse" />
+                                          <RadioButton fx:id="reponse_incorrecte" layoutX="169.0" layoutY="128.0" mnemonicParsing="false" text="Incorrecte" />
+                                          <RadioButton fx:id="reponse_correcte" layoutX="91.0" layoutY="127.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="67.0" selected="true" text="Correcte" />
+                                       </children></AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab text="Liste des Quizz">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="57.0" prefHeight="17.0" prefWidth="65.0" text="Question" />
+                                          <ComboBox fx:id="liste_questions1" layoutX="131.0" layoutY="53.0" onAction="#Afficher_Questions" prefHeight="25.0" prefWidth="339.0" />
+                                          <VBox fx:id="groupeQ" layoutX="17.0" layoutY="97.0" prefHeight="200.0" prefWidth="556.0" />
+                                       </children></AnchorPane>
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </center>
+                  </BorderPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

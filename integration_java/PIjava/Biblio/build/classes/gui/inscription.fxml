@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Box?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="469.0" prefWidth="704.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.InscriptionController">
+   <children>
+      <Box depth="100" height="300.0" layoutX="374.0" layoutY="274.0" opacity="0.79" width="300.0">
+         <cursor>
+            <Cursor fx:constant="DISAPPEAR" />
+         </cursor></Box>
+      <ImageView fitHeight="469.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/unnamed.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="email" layoutX="245.0" layoutY="224.0" prefHeight="31.0" prefWidth="216.0" promptText="Email" />
+      <PasswordField fx:id="password" layoutX="246.0" layoutY="319.0" prefHeight="31.0" prefWidth="216.0" promptText="Password" />
+      <TextField fx:id="username" layoutX="245.0" layoutY="272.0" prefHeight="31.0" prefWidth="216.0" promptText="username" />
+      <Button fx:id="btnsignup" layoutX="347.0" layoutY="417.0" mnemonicParsing="false" onAction="#signup" prefHeight="31.0" prefWidth="117.0" style="-fx-background-color: #6aa437; -fx-background-color: #3E76F7; -fx-background-color: #6aa437;" text="Register" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Button fx:id="btnret" layoutX="9.0" layoutY="419.0" mnemonicParsing="false" onAction="#retour" prefHeight="31.0" prefWidth="117.0" style="-fx-background-color: #6aa437;" text="Retour" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Label layoutX="275.0" layoutY="14.0" style="-fx-background-color: #F1F2F6;" text="StudyNET">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+      <Label layoutX="263.0" layoutY="169.0" style="-fx-background-color: #ffffff;" text="Sign in to start your session">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <effect>
+            <ColorAdjust />
+         </effect></Label>
+      <TextField fx:id="roles" layoutX="245.0" layoutY="367.0" prefHeight="31.0" prefWidth="216.0" promptText="Role" />
+   </children>
+</AnchorPane>

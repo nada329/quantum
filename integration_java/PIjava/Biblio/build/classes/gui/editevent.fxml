@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="519.0" prefWidth="797.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.EditeventController">
+   <children>
+      <ImageView fx:id="dt" fitHeight="539.0" fitWidth="797.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/unnamed.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnedit" layoutX="543.0" layoutY="444.0" mnemonicParsing="false" onAction="#editevent" prefHeight="31.0" prefWidth="117.0" style="-fx-background-color: #6aa437;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Button fx:id="btnret" layoutX="83.0" layoutY="442.0" mnemonicParsing="false" onAction="#retour" prefHeight="31.0" prefWidth="117.0" style="-fx-background-color: #6aa437;" text="Retour" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <TextField fx:id="nomEvent" layoutX="60.0" layoutY="44.0" promptText="Nom Event" />
+      <DatePicker fx:id="dateEvent" layoutX="59.0" layoutY="88.0" promptText="Date event" />
+      <TextField fx:id="adresse_event" layoutX="60.0" layoutY="137.0" promptText="Adresse event" />
+      <TextField fx:id="nb_p" layoutX="62.0" layoutY="186.0" promptText="Nb participants" />
+      <TextField fx:id="prix" layoutX="60.0" layoutY="237.0" promptText="Prix" />
+      <ComboBox fx:id="type_event" layoutX="60.0" layoutY="286.0" prefWidth="150.0" promptText="Type event" />
+      <TextArea fx:id="description" layoutX="61.0" layoutY="350.0" prefHeight="50.0" prefWidth="396.0" promptText="Description" />
+      <VBox alignment="CENTER" layoutX="442.0" layoutY="34.0" prefHeight="289.0" prefWidth="314.0">
+         <children>
+            <ImageView fx:id="imageEventPreview" fitHeight="165.0" fitWidth="257.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../Users/21696/Downloads/Placeholder.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="errorsImage" />
+            <Button fx:id="importerimage" mnemonicParsing="false" onAction="#importerEventImage" prefHeight="40.0" prefWidth="152.0" style="-fx-background-color: #6aa437;" text="Importer une image" textFill="WHITE" />
+         </children>
+      </VBox>
+      <Label fx:id="errorsImage" layoutX="10.0" layoutY="10.0" />
+   </children>
+</AnchorPane>
