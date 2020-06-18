@@ -1,0 +1,52 @@
+
+{% extends 'baseAdmin.html.twig' %}
+{% block body %}
+
+
+
+                        <table id="example1" class="table table-bordered table-striped">
+                            <head>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nom Event</th>
+                                <th>Date</th>
+                                <th>Image</th>
+                                <th>Adresse</th>
+                                <th>Type</th>
+                                <th>Nb</th>
+                                 <th>Prix</th>
+                                <th>Description</th>
+                                <th></th>
+                            </tr>
+                            </head>
+                            <h1>Events list</h1>
+
+                            <body>
+                            {% for event in events %}
+                                <tr>
+                                    <td>{{ event.idevent }}</td>
+                                    <td>{{ event.nomEvent }}</td>
+                                    <td>{% if event.dateEvent %}{{ event.dateEvent|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                   
+                                    <td><img src="{{asset('uploads/images/Event/'~event.image)}}" width=100 height=100 style="border-radius:50%" ></td>
+
+                                    <td>{{ event.adresseEvent }}</td>
+                                    <td>{{ event.typeEvent }}</td>
+                                    <td>{{ event.NbP }}</td>
+                                     <td>{{ event.prix }}</td>
+                                    <td>{{ event.description }}</td>
+                                    <td>
+                                    <a href="{{ path('edit', { 'id': event.idevent }) }}"><i class="fa fa-edit" style="font-size:18px"></i></a>
+                                        <a href="{{ path('event_delete', { 'id': event.idevent }) }}" onclick="if(!confirm('Voulez-vous supprimer')) return false"><i class="fa fa-trash" style="font-size:18px"></i></a>
+                                        <a href="{{ path('event_show', { 'id': event.idevent }) }}"><i class="fa fa-eye" style="font-size:18px"></i></a>
+
+                                    </td>
+                                </tr>
+
+                            {% endfor %}
+                            </body>
+
+
+                        </table>
+
+                        {% endblock %}

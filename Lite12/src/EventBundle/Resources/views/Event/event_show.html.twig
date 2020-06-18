@@ -1,0 +1,34 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block body %}
+        <div class="card">
+            <div class="container-fliud">
+                <div class="wrapper row">
+                    <div class="preview col-md-6" style="width:600px;height:300px">
+                <img src="{{ asset('uploads/images/Event/' ~ event.image) }}" style="width:500px;height:300px">
+                        <div class="preview-pic tab-content" >
+                            <div class="tab-pane active" id="pic-1" >
+                          
+                            </div>
+                              
+                        </div>
+
+
+                    </div>
+                    <div class="details col-md-6">
+                        <h4 class="product-title">Nom Evenement : {{ event.nomEvent }}</h4>
+                        <h5 class="price">Idantifiant : <span>{{ event.idevent }}</span></h5>
+                        <h5 class="price">Type: <span>{{ event.typeEvent }}</span></h5>
+                         <h5 class="price">Adresse: <span>{{ event.adresseEvent }}</span></h5>
+                        <h5 class="price">Nombre de participant: <span>{{ event.NbP }}</span></h5>
+                        <h5 class="price">Date Evenement: <span>{{ event.dateEvent | date}}</span></h5>
+                       <p class="product-description"> Prix: {{ event.prix }}<sup>Dt</sup></p>
+                        <p class="product-description">Description:  {{ event.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+    </html>
+
+{% endblock %}

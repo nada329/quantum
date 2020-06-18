@@ -1,0 +1,16 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block body %}
+    <center>
+        <h1> Ajout des Notes</h1>
+
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create"  />
+        {{ form_end(form) }}
+
+        <ul>
+            <li>
+                <a href="{{ path('listN') }}"></a>
+            </li>
+        </ul> </center>
+{% endblock %}

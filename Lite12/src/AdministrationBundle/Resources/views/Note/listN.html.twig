@@ -1,0 +1,47 @@
+
+{% extends 'baseAdmin.html.twig' %}
+{% block body %}
+
+
+
+    <table id="example1" class="table table-bordered table-striped">
+        <body>
+        <h1>Liste des Notes</h1>
+        <tr>
+            <th>Note ID</th>
+            <th>Note cc </th>
+            <th>Note test </th>
+            <th>Note examen </th>
+            <th>Matiere ID</th>
+            <th>Eleve ID </th>
+
+            <th>Actions</th>
+        </tr>
+
+        {% for note in notes %}
+            <tr>
+                <td>{{ note.id}}</td>
+                <td>{{ note.cc }}</td>
+                <td>{{ note.test }}</td>
+                <td>{{ note.examen }}</td>
+                <td>{{ note.Matiere }}</td>
+                <td>{{ note.Eleve }}</td>
+
+                <td>
+                    <a href="{{ path('ajoutN', { 'id': note.id }) }}">add <i class="fa fa-edit" style="font-size:18px"></i></a>
+
+                    <a href="{{ path('delete', { 'id': note.id }) }}">delete<i class="fa fa-trash" style="font-size:18px"></i></a>
+                    <a href="{{ path('exporter', { 'id': note.id }) }}">exporter<i class="fa fa-eye" style="font-size:18px"></i></a>
+
+                </td>
+
+            </tr>
+
+        {% endfor %}
+        </body>
+
+
+    </table>
+
+{% endblock %}
+

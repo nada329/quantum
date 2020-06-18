@@ -1,0 +1,43 @@
+
+{% extends 'baseAdmin.html.twig' %}
+{% block body %}
+
+
+
+<table id="example1" class="table table-bordered table-striped">
+    <body>
+    <h1>Liste des eleves </h1>
+    <tr>
+        <th>Eleve ID</th>
+
+        <th> sexe  </th>
+        <th> age </th>
+        <th> adresse </th>
+        <th> Telephone </th>
+
+
+
+
+    </tr>
+
+    {% for eleve in eleves %}
+    <tr>
+        <td>{{ eleve.id}}</td>
+
+        <td>{{ eleve.sexe }}</td>
+        <td>{{ eleve.age }}</td>
+        <td>{{ eleve.telephone }}</td>
+        <td>{{ eleve.adresse }}</td>
+        <td>
+        <a href="{{ path('ajoutN', { 'id': eleve.id }) }}">select<i class="fa fa-edit" style="font-size:18px"></i></a>
+
+        </td>
+    </tr>
+
+    {% endfor %}
+    </body>
+
+
+</table>
+
+{% endblock %}

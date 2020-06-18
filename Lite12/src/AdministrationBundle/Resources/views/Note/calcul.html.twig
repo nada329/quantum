@@ -1,0 +1,23 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block body %}
+<center>
+
+<h4> FORMULAIRE CALCUL D'UNE MOYENNE  </h4>
+
+
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Calculer la moyenne"  />    </br> </br>
+    MOYENNE GENERALE : <input type="text" value="<?php echo $moyenne;?>" >
+        {{ form_end(form) }}
+
+        <ul>
+            <li>
+                <a href="{{ path('calcul') }}"></a>
+            </li>
+        </ul>
+
+
+
+</center>
+{% endblock %}

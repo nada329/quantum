@@ -1,0 +1,62 @@
+administration_homepage:
+    path:     /ad
+    defaults: { _controller: AdministrationBundle:Default:index }
+        methods: [GET, POST]
+
+list:
+    path:     /liste
+    defaults: { _controller: AdministrationBundle:Matiere:liste }
+        methods: [GET, POST]
+listN:
+    path:     /listN
+    defaults: { _controller: AdministrationBundle:Note:listN }
+        methods: [GET, POST]
+
+
+add:
+    path:     /add
+    defaults: { _controller: AdministrationBundle:Matiere:add }
+        methods: [GET, POST]
+
+delete:
+    path:     /delete
+    defaults: { _controller: AdministrationBundle:Matiere:delete }
+        methods: DELETE
+
+affiche:
+    path:     /affiche
+    defaults: { _controller: AdministrationBundle:Matiere:affiche }
+    methods: [GET, POST]
+
+ajoutN:
+    path:     /ajoutN
+    defaults: { _controller: AdministrationBundle:Note:ajoutN }
+        methods: [GET, POST]
+calcul:
+    path:     /calcul
+    defaults: { _controller: AdministrationBundle:Note:calcul }
+        methods: [GET, POST]
+
+aff:
+    path:     /aff
+    defaults: { _controller: AdministrationBundle:Note:aff }
+        methods: [GET, POST]
+
+update:
+    path:     /update
+    defaults: { _controller: AdministrationBundle:Note:update }*
+                  methods: [GET, POST]
+
+listel:
+    path:     /listel
+    defaults: { _controller: AdministrationBundle:Eleve:listel }
+    methods: [GET, POST]
+
+
+updateM:
+    path:     /updateM/{id}
+    defaults: { _controller: AdministrationBundle:Matiere:updateM }
+        methods: [GET, POST]
+exporter:
+    path:     /exporter
+    defaults: { _controller: AdministrationBundle:Note:exporter }
