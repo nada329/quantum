@@ -1,0 +1,30 @@
+<<<<<<< HEAD
+scolarite:
+    resource: "@ScolariteBundle/Resources/config/routing.yml"
+    prefix:   /
+
+activite:
+    resource: "@activiteBundle/Resources/config/routing.yml"
+=======
+administration:
+    resource: "@AdministrationBundle/Resources/config/routing.yml"
+    prefix:   /
+
+event:
+    resource: "@EventBundle/Resources/config/routing.yml"
+>>>>>>> 819ce1d4f7ad25539b7a3854ac066f5969d30ab8
+    prefix:   /
+
+bibliotheque:
+    resource: "@BibliothequeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

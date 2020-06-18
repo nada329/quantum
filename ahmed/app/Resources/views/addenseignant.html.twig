@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block container %}
+
+<h1> Ajout d'un enseignant</h1>
+{{ form_start(f) }}
+<table>
+
+    <tr>
+        <th> NOM: </th>
+        <td>{{ form_widget(f.nom) }}</td>
+    </tr>
+    <tr>
+        <th> PRENOM: </th>
+        <td>{{ form_widget(f.prenom) }}</td>
+    <tr>
+        <th> MATIERE: </th>
+        <td>{{ form_widget(f.matiere) }}</td>
+    </tr>
+
+
+</table>
+{{ form_end(f) }}
+
+{% endblock %}

@@ -1,0 +1,18 @@
+livre_index:
+    path:     /
+    defaults: { _controller: "BibliothequeBundle:Livre:index" }
+livre_indexFront:
+    path:     /F
+    defaults: { _controller: "BibliothequeBundle:Livre:indexF" }
+livre_show:
+    path:     /{id}/show
+    defaults: { _controller: "BibliothequeBundle:Livre:show" }
+livre_new:
+    path:     /new
+    defaults: { _controller: "BibliothequeBundle:Livre:new" }
+livre_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BibliothequeBundle:Livre:edit" }
+livre_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BibliothequeBundle:Livre:delete" }

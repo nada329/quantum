@@ -1,0 +1,64 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <div class="col-lg-12">
+        <h1 class="page-header">Quiz</h1>
+    </div>
+
+<div id="my_radio_boxes"  class="clearfix" >
+    {%  for s in questionList %}
+           <h4> {{ s.question }}</h4>
+        <div class="form-group">
+        <label class="col-md-4 control-label" for="{{ s.id }}">Réponses :</label>
+{% for r in s.reponses %}
+    <div class="checkbox">
+        <label for="{{s.id}}">
+           <input class="ajax{{ r.id }}{{s.id}}" type="radio" name="{{ s.id }}" id="{{ r.id }}{{s.id}}"  value="{{r.id}}" >{{r.reponse}}
+        </label>
+    </div>
+{% endfor %}
+        </div>
+    {% endfor %}
+
+    <a  class="btn btn-primary" href="{{ path('quizresult') }}">J'ai Fini</a>
+</div>
+
+
+
+{% endblock %}
+{% block javascript %}
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            {%  for s in questionList %}
+            {% for r in s.reponses %}
+            $('#{{ r.id }}{{s.id}}').change(function(){
+
+                selected_value = $("input[id={{ r.id }}{{s.id}}]:checked").val();
+                that = $(this);
+                $.ajax({
+                    url:'{{  (path('listcoursetquiz'))  }}',
+                    type: "post",
+                    dataType: "json",
+                    data: {
+                        "reponse_id": selected_value ,
+                        "question_id": {{ s.id }}
+                    },
+                    async: true,
+                    success: function (data)
+                    {
+                        console.log(data);
+                       // alert(data) ;
+                        $('div#ajax-results').html(data.output);
+                    }
+                });
+                return false;
+
+            });
+            {% endfor %}
+            {% endfor %}
+        });
+
+
+
+    </script>
+{% endblock %}

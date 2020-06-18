@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% if  is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        {% else %}
+        <div class="what-we-do container">
+            <div class="row">
+                <div class="service span4">
+                    <div class="icon-awesome">
+                        <i class="icon-eye-open"></i>
+                    </div>
+                    <h4>Espace Eleve</h4>
+                    <div class="ca-button">
+                        <a href="{{ path("user_register_eleve") }}">s'inscrir en Tant que Eleve</a>
+                    </div>
+                </div>
+                <div class="service span4">
+                    <div class="icon-awesome">
+                        <i class="icon-table"></i>
+                    </div>
+                    <h4>Espace Enseignant</h4>
+                    <div class="ca-button">
+                        <a href="{{ path("user_register_enseignants") }}">s'inscrir en Tant que Enseignant</a>
+                    </div>
+                </div>
+                <div class="service span4">
+                    <div class="icon-awesome">
+                        <i class="icon-magic"></i>
+                    </div>
+                    <h4>Espace Parent</h4>
+                    <div class="ca-button">
+                        <a href="{{ path("user_register_parent") }}">s'inscrir en Tant que Parent</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <div class="services-half-width container">
+        <div class="row">
+            <div class="services-half-width-text span4">
+                <h4>Espace Eleve</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper <span class="violet">suscipit lobortis</span> nisl ut aliquip ex ea commodo consequat. Lorem ipsum <strong>dolor sit amet</strong>, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do <strong>eiusmod tempor</strong> incididunt.</p>
+            </div>
+            <div class="services-half-width-text span4">
+                <h4>Espace Enseignant</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper <span class="violet">suscipit lobortis</span> nisl ut aliquip ex ea commodo consequat. Lorem ipsum <strong>dolor sit amet</strong>, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do <strong>eiusmod tempor</strong> incididunt.</p>
+            </div>
+            <div class="services-half-width-text span4">
+                <h4>Espace Parent</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper <span class="violet">suscipit lobortis</span> nisl ut aliquip ex ea commodo consequat. Lorem ipsum <strong>dolor sit amet</strong>, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do <strong>eiusmod tempor</strong> incididunt.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

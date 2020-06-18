@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/Lite/vendor/composer" />
+      <path value="$PROJECT_DIR$/Lite/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/Lite/vendor/incenteev/composer-parameter-handler" />
+      <path value="$PROJECT_DIR$/Lite/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/Lite/vendor/sensiolabs/security-checker" />
+      <path value="$PROJECT_DIR$/Lite/vendor/friendsofsymfony/user-bundle" />
+      <path value="$PROJECT_DIR$/Lite/vendor/blackknight467/star-rating-bundle" />
+      <path value="$PROJECT_DIR$/Lite/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/Lite/vendor/fig/link-util" />
+      <path value="$PROJECT_DIR$/Lite/vendor/psr/link" />
+      <path value="$PROJECT_DIR$/Lite/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/Lite/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/Lite/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/Lite/vendor/jdorn/sql-formatter" />
+      <path value="$PROJECT_DIR$/Lite/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/Lite/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/Lite/vendor/sensio/distribution-bundle" />
+      <path value="$PROJECT_DIR$/Lite/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/Lite/vendor/sensio/generator-bundle" />
+      <path value="$PROJECT_DIR$/Lite/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/Lite/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/Lite/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/Lite/vendor/symfony/polyfill-apcu" />
+      <path value="$PROJECT_DIR$/Lite/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/Lite/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/Lite/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/Lite/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/Lite/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/Lite/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/Lite/vendor/symfony/symfony" />
+      <path value="$PROJECT_DIR$/Lite/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/Lite/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/Lite/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/Lite/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/Lite/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/Lite/vendor/doctrine/doctrine-cache-bundle" />
+      <path value="$PROJECT_DIR$/Lite/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/Lite/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/Lite/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/Lite/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/Lite/vendor/doctrine/lexer" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="5.5.0" />
+</project>

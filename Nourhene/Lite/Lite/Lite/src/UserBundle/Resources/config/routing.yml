@@ -1,0 +1,12 @@
+user_register_parent:
+    path:     /register/parent
+    defaults: { _controller: UserBundle:Default:registerParent }
+user_register_eleve:
+    path:     /register/eleve
+    defaults: { _controller: UserBundle:Default:registerEleve }
+user_register_admin:
+    path:     /register/admin
+    defaults: { _controller: UserBundle:Default:registerAdmin }
+user_register_enseignants:
+    path:     /register/enseignant
+    defaults: { _controller: UserBundle:Default:registerENSEIGNANT }

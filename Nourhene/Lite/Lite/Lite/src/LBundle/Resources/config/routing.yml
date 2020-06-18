@@ -1,0 +1,3 @@
+l_homepage:
+    path:     /
+    defaults: { _controller: LBundle:Default:index }

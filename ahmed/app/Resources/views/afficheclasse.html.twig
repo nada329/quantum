@@ -1,0 +1,35 @@
+{% extends "baseAdmin.html.twig" %}
+
+{% block container %}
+
+    <center>
+        <table border="3">
+
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Salle</th>
+                <th>Specialité</th>
+
+
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for classe in classe %}
+                <tr>
+                    <td>{{ classe.id }}</td>
+                    <td>{{ classe.nom }}</td>
+                    <td>{{ classe.salle }}</td>
+                    <td>{{ classe.specialite}}</td>
+                    <td><a href="{{ path("supp_classe", {'id':classe.id})}}">supprimer</a></td>
+                    <td><a href="{{ path("modif_classe", {'id':classe.id})}}">modifier</a></td>
+
+                </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+    </center>
+{% endblock %}

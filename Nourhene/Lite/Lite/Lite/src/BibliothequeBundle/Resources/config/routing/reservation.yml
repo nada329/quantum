@@ -1,0 +1,43 @@
+reservation_index:
+    path:     /
+    defaults: { _controller: "BibliothequeBundle:Reservation:index" }
+
+reservation_show:
+    path:     /{id}/show
+    defaults: { _controller: "BibliothequeBundle:Reservation:show" }
+
+reservation_liste:
+    path:     /getres
+    defaults: { _controller: "BibliothequeBundle:Reservation:getReservation" }
+
+reservation_new:
+    path:     /new/{id}
+    defaults: { _controller: "BibliothequeBundle:Reservation:new" }
+
+reservation_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BibliothequeBundle:Reservation:edit" }
+
+reservation_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BibliothequeBundle:Reservation:delete" }
+
+reservation_index_back:
+    path:     /requests
+    defaults: { _controller: "BibliothequeBundle:Reservation:indexBack" }
+
+reservation_accept:
+    path:     /accept/{id}
+    defaults: { _controller: "BibliothequeBundle:Reservation:acceptReservation" }
+
+reservation_decline:
+    path:     /decline/{id}
+    defaults: { _controller: "BibliothequeBundle:Reservation:declineReservation" }
+
+reservation_rendu:
+    path:     /rendu/{id}
+    defaults: { _controller: "BibliothequeBundle:Reservation:render" }
+
+reservation_renderIndex:
+    path:     /render
+    defaults: { _controller: "BibliothequeBundle:Reservation:indexRender" }

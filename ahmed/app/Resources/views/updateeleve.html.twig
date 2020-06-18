@@ -1,0 +1,32 @@
+{% extends "baseAdmin.html.twig" %}
+
+{% block container %}
+<center>
+<h1> Modifier Un Eleve</h1>
+{{ form_start(f) }}
+<table border="3">
+
+    <tr>
+        <th> NOM: </th>
+        <td>{{ form_widget(f.nom) }}</td>
+    </tr>
+    <tr>
+        <th> PRENOM: </th>
+        <td>{{ form_widget(f.prenom) }}</td>
+    </tr>
+
+
+    <tr>
+        <th> DATE DE NAISSANCE: </th>
+        <td>{{ form_widget(f.dateDeNaissance) }}</td>
+    </tr>
+
+    <tr>
+        <th>  CLASSE: </th>
+        <td>{{ form_widget(f.groupe) }}</td>
+    </tr>
+
+</table>
+{{ form_end(f) }}
+</center>
+{% endblock %}

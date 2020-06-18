@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Reservation creation</h1>
+    <div class="contact-us container">
+        <div class="row">
+            <div class="contact-form span12">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper <a href="">suscipit lobortis</a> nisl ut aliquip ex ea commodo consequat.</p>
+                {{ form_start(form) }}
+                    <label for="name" class="nameLabel">Date : </label>
+                    <div class="form-group">
+                        {% if form.date.vars.valid==true %}
+                            {{ form_widget(form.date, { 'attr': {'class': 'form-control','row':'1'} }) }}
+                        {% else %}
+                            {{ form_widget(form.date, { 'attr': {'class': 'form-control is-invalid','row':'1'} }) }}
+                        {% endif %}
+                        <span class="error invalid-feedback">{{ form_errors(form.date) }}</span>
+                    </div>
+                    <label for="email" class="emailLabel">Duree (en jour): </label>
+                    {{ form_widget(form.duree,{'attr':{'max':'15','min':'1'}}) }}
+                <div class="form-group">
+                    {% if form.duree.vars.valid==true %}
+                        {{ form_widget(form.duree,{'attr':{'max':'15','min':'1'}}) }}
+                    {% else %}
+                        {{ form_widget(form.duree, { 'attr': {'class': 'form-control is-invalid','max':'15','min':'1'} }) }}
+                    {% endif %}
+                    <span class="error invalid-feedback">{{ form_errors(form.duree) }}</span>
+                </div>
+                    <input type="submit" class="btn " value="Send"/>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

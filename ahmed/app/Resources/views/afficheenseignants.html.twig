@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block container %}
+
+    <center>
+        <table>
+
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Matiere</th>
+
+
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for enseignant in enseignants %}
+                <tr>
+                    <td>{{ enseignant.id }}</td>
+                    <td>{{ enseignant.nom }}</td>
+                    <td>{{ enseignant.prenom }}</td>
+                    <td>{{ enseignant.matiere}}</td>
+                    <td><a href="{{ path("supp_Enseignant", {'id':enseignant.id})}}">supprimer</a></td>
+                    <td><a href="{{ path("modif_Enseignant", {'id':enseignant.id})}}">modifier</a></td>
+
+                </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+    </center>
+{% endblock %}
